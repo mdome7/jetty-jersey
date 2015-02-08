@@ -11,6 +11,9 @@ mvn clean compile exec:java
 ```
 
 You can then interact with the server using on the following URLs:
-| URL                                             | Description                                   | Expected Response  |
-|-------------------------------------------------|-----------------------------------------------|--------------------|
-|http://localhost:8080/jetty-jersey/echo/test     | Echoes the parameter message back to client   | test               |
+| URL                                             | Description                                       | Expected Response  |
+|-------------------------------------------------|---------------------------------------------------|--------------------|
+|http://localhost:8080/jetty-jersey/echo/test     | Echoes the parameter message back to client       | test               |
+|http://localhost:8080/jetty-jersey/status        | Returns the current status of the application     | RUNNING            |
+|http://localhost:8080/jetty-jersey/counter       | Increments and returns the current counter value  | 1                  |
+|http://localhost:8080/jetty-jersey/status (PUT)  | Update the status; try ```curl -X PUT -dnewStatus=MAINTENANCE_MODE ...``` | |

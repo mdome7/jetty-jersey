@@ -5,6 +5,7 @@ import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 import org.glassfish.jersey.server.ServerProperties;
 import org.glassfish.jersey.servlet.ServletContainer;
+import org.jboss.weld.environment.se.Weld;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,6 +16,9 @@ public class JettyApp {
     public static final int SERVER_PORT = 8080;
 
     public static void main(String[] args) throws Exception {
+
+        Weld weld = new Weld();
+        weld.initialize();
 
         ServletHolder jerseyServlet = new ServletHolder(ServletContainer.class);
         jerseyServlet.setInitOrder(0);
@@ -32,6 +36,7 @@ public class JettyApp {
 	        server.join();
         } finally {
         	server.destroy();
+            weld.shutdown();
         }
     }
 }

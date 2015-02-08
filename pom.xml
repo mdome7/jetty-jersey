@@ -9,7 +9,9 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         
+        <cdi.api-version>1.1</cdi.api-version>
         <ch.qos.logback-version>1.0.9</ch.qos.logback-version>
+        <javax.annotation-version>1.2</javax.annotation-version>
         <jaxrs.api.impl.version>2.0.1</jaxrs.api.impl.version>
         <jersey-version>2.15</jersey-version>
         <jetty-version>9.2.6.v20141205</jetty-version>
@@ -55,6 +57,21 @@
             <groupId>javax.ws.rs</groupId>
             <artifactId>javax.ws.rs-api</artifactId>
             <version>${jaxrs.api.impl.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.enterprise</groupId>
+            <artifactId>cdi-api</artifactId>
+            <version>${cdi.api-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.ext.cdi</groupId>
+            <artifactId>jersey-weld2-se</artifactId>
+            <version>${jersey-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.ext.cdi</groupId>
+            <artifactId>jersey-cdi1x</artifactId>
+            <version>${jersey-version}</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
