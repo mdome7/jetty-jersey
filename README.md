@@ -17,3 +17,16 @@ You can then interact with the server using on the following URLs:
 |http://localhost:8080/jetty-jersey/status        | Returns the current status of the application     | RUNNING            |
 |http://localhost:8080/jetty-jersey/counter       | Increments and returns the current counter value  | 1                  |
 |http://localhost:8080/jetty-jersey/status (PUT)  | Update the status; try ```curl -X PUT -dnewStatus=MAINTENANCE_MODE ...``` | |
+
+
+### Packaging an Executable JAR
+You can also package an "uber" JAR that can be executed anywhere you have Java installed.  This automatically gets packaged as a secondary artifact whenever you do:
+
+```
+mvn clean package
+```
+
+To run it, execute the command:
+```
+java -jar target/jetty-jersey-1.0-SNAPSHOT-exec.jar 
+```
